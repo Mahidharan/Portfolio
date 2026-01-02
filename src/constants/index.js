@@ -1,265 +1,157 @@
 import {
-  mobile,
+  web,
   backend,
   creator,
-  web,
   javascript,
-  typescript,
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
   mongodb,
   git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
 } from "../assets";
 
 export const navLinks = [
-  {
-    id: "about",
-    title: "About",
-  },
-  {
-    id: "work",
-    title: "Work",
-  },
-  {
-    id: "contact",
-    title: "Contact",
-  },
+  { id: "about", title: "About" },
+  { id: "projects", title: "Projects" },
+  { id: "contact", title: "Contact" },
 ];
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Frontend Developer",
     icon: web,
-  },
-  {
-    title: "React Native Developer",
-    icon: mobile,
   },
   {
     title: "Backend Developer",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "MERN Stack Developer",
     icon: creator,
   },
 ];
 
 const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
+  { name: "HTML", icon: html },
+  { name: "CSS", icon: css },
+  { name: "JavaScript", icon: javascript },
+  { name: "React", icon: reactjs },
+  { name: "Tailwind CSS", icon: tailwind },
+  { name: "Node.js", icon: nodejs },
+  { name: "MongoDB", icon: mongodb },
+  { name: "Git & GitHub", icon: git },
 ];
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    title: "BCA Student",
+    company_name: "Undergraduate Program",
+    iconBg: "#1d1836",
+    date: "2023 – 2026",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Pursuing Bachelor of Computer Applications with strong interest in full-stack development.",
+      "Built multiple frontend and backend projects using React and Node.js.",
+      "Focused on writing clean, scalable, and maintainable code.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    title: "MERN Stack Developer",
+    company_name: "Personal Projects",
+    iconBg: "#1d1836",
+    date: "2024 – Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Designed and developed full-stack MERN applications from scratch.",
+      "Implemented Google OAuth authentication and JWT-based authorization.",
+      "Worked with Cloudinary for image & resume uploads.",
+      "Built real-time chat features using WebSockets.",
     ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-];
-
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "NextStep",
+    date: "2024 – Present",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      "A full-stack MERN platform designed to help students share real interview experiences, connect with peers, and prepare smarter for placements.",
+    points: [
+      "Implemented Google OAuth authentication with secure session handling",
+      "Built real-time chat functionality using WebSockets for instant communication",
+      "Designed RESTful APIs using Node.js and Express",
+      "Integrated MongoDB for user, post, and comment management",
+      "Used Cloudinary for image and resume uploads",
+      "Developed a modern, responsive dark-themed UI",
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    tags: [
+      { name: "mern", color: "blue-text-gradient" },
+      { name: "oauth", color: "green-text-gradient" },
+      { name: "websocket", color: "pink-text-gradient" },
+    ],
+    source_code_link: "https://github.com/Mahidharan/NextStep",
+    live_link: "https://nextstep-yourdomain.vercel.app",
   },
+
   {
-    name: "Job IT",
+    name: "MovieStream",
+    date: "2024",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      "A Netflix-inspired movie streaming web application built with React and Firebase, focusing on authentication, UI design, and real-time data handling.",
+    points: [
+      "Built reusable UI components using React with a Netflix-style layout",
+      "Integrated Firebase Authentication for secure login and user management",
+      "Used Firebase Firestore to manage movie content and user data",
+      "Implemented responsive design for mobile and desktop devices",
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "firebase", color: "green-text-gradient" },
+      { name: "ui/ux", color: "pink-text-gradient" },
+    ],
+    source_code_link: "https://github.com/Mahidharan/MovieStream",
+    live_link: "",
   },
+
   {
-    name: "Trip Guide",
+    name: "MISC Music Player",
+    date: "2024",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      "A full-stack music streaming application developed using the MERN stack, enabling users to browse, play, and manage music content.",
+    points: [
+      "Developed backend APIs using Node.js and Express",
+      "Designed MongoDB schemas for music and user data",
+      "Built interactive frontend using React for seamless playback",
+      "Focused on scalable architecture and clean code structure",
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    tags: [
+      { name: "mern", color: "blue-text-gradient" },
+      { name: "mongodb", color: "green-text-gradient" },
+      { name: "nodejs", color: "pink-text-gradient" },
+    ],
+    source_code_link: "https://github.com/Mahidharan/MISC-Music-Player",
+    live_link: "",
+  },
+
+  {
+    name: "Currency Converter",
+    date: "2023",
+    description:
+      "A lightweight currency converter web application built with React, providing real-time exchange rate conversion with a clean user interface.",
+    points: [
+      "Integrated third-party APIs to fetch live exchange rates",
+      "Implemented dynamic currency selection and instant conversion",
+      "Handled loading states and API errors gracefully",
+      "Designed minimal and user-friendly interface",
+    ],
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "api", color: "green-text-gradient" },
+      { name: "frontend", color: "pink-text-gradient" },
+    ],
+    source_code_link: "https://github.com/Mahidharan/Currency-Converter",
+    live_link: "",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects };
