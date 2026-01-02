@@ -1,7 +1,4 @@
 import {
-  web,
-  backend,
-  creator,
   javascript,
   html,
   css,
@@ -10,27 +7,13 @@ import {
   nodejs,
   mongodb,
   git,
+  nextstepImg,
 } from "../assets";
 
 export const navLinks = [
   { id: "about", title: "About" },
   { id: "projects", title: "Projects" },
   { id: "contact", title: "Contact" },
-];
-
-const services = [
-  {
-    title: "Frontend Developer",
-    icon: web,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "MERN Stack Developer",
-    icon: creator,
-  },
 ];
 
 const technologies = [
@@ -89,6 +72,8 @@ const projects = [
       { name: "oauth", color: "green-text-gradient" },
       { name: "websocket", color: "pink-text-gradient" },
     ],
+    image: nextstepImg,
+
     source_code_link: "https://github.com/Mahidharan/NextStep",
     live_link: "https://nextstep-yourdomain.vercel.app",
   },
@@ -154,4 +139,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, projects };
+export { technologies, experiences, projects };
