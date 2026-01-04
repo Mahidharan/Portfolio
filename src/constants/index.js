@@ -10,6 +10,9 @@ import {
   nextstepImg,
   moviestreamImg,
   currencyImg,
+  miscImg,
+  linux,
+  network,
 } from "../assets";
 
 export const navLinks = [
@@ -27,6 +30,8 @@ const technologies = [
   { name: "Node.js", icon: nodejs },
   { name: "MongoDB", icon: mongodb },
   { name: "Git & GitHub", icon: git },
+  { name: "Linux", icon: linux },
+  { name: "Networking", icon: network },
 ];
 
 const experiences = [
@@ -117,6 +122,7 @@ const projects = [
       { name: "mongodb", color: "green-text-gradient" },
       { name: "nodejs", color: "pink-text-gradient" },
     ],
+    image: miscImg,
     source_code_link: "https://github.com/Mahidharan/MISC-Music-Player",
     live_link: "",
   },
