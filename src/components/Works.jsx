@@ -127,7 +127,8 @@ const Works = () => {
         <motion.p
           variants={textVariant()}
           initial="hidden"
-          animate="show"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
           className={styles.sectionSubText}
         >
           My Work
@@ -136,7 +137,8 @@ const Works = () => {
         <motion.h2
           variants={textVariant()}
           initial="hidden"
-          animate="show"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
           className={styles.sectionHeadText}
         >
           Projects.
@@ -145,7 +147,8 @@ const Works = () => {
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
           initial="hidden"
-          animate="show"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
           className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           A curated set of projects demonstrating my ability to build modern,
@@ -153,7 +156,13 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="relative h-[560px] flex items-center justify-center overflow-hidden">
+      <motion.div
+        variants={fadeIn("up", "spring", 0.2, 1)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        className="relative h-[560px] flex items-center justify-center overflow-hidden"
+      >
         <ProjectCard project={projects[prev]} position="left" />
         <ProjectCard project={projects[active]} position="center" />
         <ProjectCard project={projects[next]} position="right" />
@@ -183,7 +192,7 @@ const Works = () => {
         >
           <TbChevronRight className="text-white w-6 h-6" />
         </button>
-      </div>
+      </motion.div>
     </>
   );
 };
