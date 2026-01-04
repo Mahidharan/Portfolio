@@ -11,6 +11,7 @@ import {
   moviestreamImg,
   currencyImg,
   miscImg,
+  carthuntImg,
   linux,
   network,
 } from "../assets";
@@ -80,9 +81,9 @@ const projects = [
       { name: "websocket", color: "pink-text-gradient" },
     ],
     image: nextstepImg,
+    source_code_link: "https://github.com/Mahidharan",
 
-    source_code_link: "https://github.com/Mahidharan/NextStep",
-    live_link: "https://nextstep-yourdomain.vercel.app",
+    live_link: "https://next-step-mahi.vercel.app",
   },
 
   {
@@ -102,8 +103,8 @@ const projects = [
       { name: "ui/ux", color: "pink-text-gradient" },
     ],
     image: moviestreamImg,
-    source_code_link: "https://github.com/Mahidharan/MovieStream",
-    live_link: "",
+    source_code_link: "https://github.com/Mahidharan/Moviestream",
+    live_link: "https://mahi-moviestream-net.netlify.app",
   },
 
   {
@@ -124,7 +125,7 @@ const projects = [
     ],
     image: miscImg,
     source_code_link: "https://github.com/Mahidharan/MISC-Music-Player",
-    live_link: "",
+    live_link: "https://music-player-sepia-alpha.vercel.app/",
   },
 
   {
@@ -145,7 +146,31 @@ const projects = [
     ],
     image: currencyImg,
     source_code_link: "https://github.com/Mahidharan/Currency-Converter",
-    live_link: "",
+    live_link: "https://currency-converter-seven-lac.vercel.app/",
+  },
+  {
+    name: "CartHunt",
+    date: "2024 – Present",
+    description:
+      "A E-commerce website built with HTML, CSS, Javascript providing add to cart feature and animation , it also calculate the total amount in the cart  ",
+    points: [
+      "Built a responsive e-commerce website using HTML, CSS, and JavaScript",
+      "Implemented add-to-cart functionality with real-time item count updates",
+      "Developed dynamic cart logic to calculate total items and total price instantly",
+      "Added smooth animations and visual feedback when products are added to the cart",
+      "Managed cart state using JavaScript for seamless user interaction",
+      "Designed a clean, user-friendly UI optimized for desktop and mobile devices",
+    ],
+
+    tags: [
+      { name: "HTML", color: "orange-text-gradient" },
+      { name: "CSS", color: "blue-text-gradient" },
+      { name: "Javascript", color: "text-yellow-400" },
+    ],
+    image: carthuntImg,
+    source_code_link: "https://github.com/Mahidharan/Cartify",
+
+    live_link: "https://mahi-cart-hunt-web.netlify.app/",
   },
 ];
 

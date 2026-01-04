@@ -8,8 +8,8 @@ const SkillCard = ({ tech }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const rotateX = useTransform(y, [-90, 90], [35, -35]);
-  const rotateY = useTransform(x, [-90, 90], [-35, 35]);
+  const rotateX = useTransform(y, [-100, 100], [55, -55]);
+  const rotateY = useTransform(x, [-100, 100], [-55, 55]);
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();

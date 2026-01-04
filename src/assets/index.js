@@ -14,6 +14,7 @@ import tailwind from "./tech/tailwind.png";
 import nextstepImg from "./projects/nextstep.png";
 import moviestreamImg from "./projects/moviestream.jpeg";
 import currencyImg from "./projects/currency-converter.png";
+import carthuntImg from "./projects/carthunt.png";
 import miscImg from "./projects/misc.jpeg";
 import linux from "./tech/linux.png";
 import network from "./tech/networking.png";
@@ -34,6 +35,7 @@ export {
   moviestreamImg,
   nextstepImg,
   currencyImg,
+  carthuntImg,
   miscImg,
   linux,
   network,
