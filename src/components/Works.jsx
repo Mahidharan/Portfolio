@@ -37,11 +37,13 @@ const ProjectCard = ({
           transition-all duration-300
         "
       >
-        {/* Image */}
         <div className="relative w-full h-[220px]">
-          <img src={image} alt={name} className="w-full h-full object-cover" />
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-contain"
+          />
 
-          {/* GitHub floating button */}
           <button
             onClick={() => window.open(source_code_link, "_blank")}
             className="
@@ -57,7 +59,6 @@ const ProjectCard = ({
           </button>
         </div>
 
-        {/* Content */}
         <div className="p-5">
           <h3 className="text-white text-[22px] font-bold">{name}</h3>
 
@@ -65,7 +66,6 @@ const ProjectCard = ({
             {description}
           </p>
 
-          {/* Tags */}
           <div className="mt-4 flex flex-wrap gap-2">
             {tags.map((tag) => (
               <span key={tag.name} className={`text-[13px] ${tag.color}`}>
@@ -74,7 +74,6 @@ const ProjectCard = ({
             ))}
           </div>
 
-          {/* Actions */}
           <div className="mt-4 flex gap-4 text-sm">
             <button
               onClick={() => window.open(source_code_link, "_blank")}

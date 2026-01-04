@@ -8,6 +8,8 @@ import {
   mongodb,
   git,
   nextstepImg,
+  moviestreamImg,
+  currencyImg,
 } from "../assets";
 
 export const navLinks = [
@@ -94,6 +96,7 @@ const projects = [
       { name: "firebase", color: "green-text-gradient" },
       { name: "ui/ux", color: "pink-text-gradient" },
     ],
+    image: moviestreamImg,
     source_code_link: "https://github.com/Mahidharan/MovieStream",
     live_link: "",
   },
@@ -134,6 +137,7 @@ const projects = [
       { name: "api", color: "green-text-gradient" },
       { name: "frontend", color: "pink-text-gradient" },
     ],
+    image: currencyImg,
     source_code_link: "https://github.com/Mahidharan/Currency-Converter",
     live_link: "",
   },

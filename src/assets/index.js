@@ -12,6 +12,8 @@ import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
 import nextstepImg from "./projects/nextstep.png";
+import moviestreamImg from "./projects/moviestream.jpeg";
+import currencyImg from "./projects/currency-converter.png";
 
 export {
   logo,
@@ -26,5 +28,7 @@ export {
   nodejs,
   reactjs,
   tailwind,
+  moviestreamImg,
   nextstepImg,
+  currencyImg,
 };
