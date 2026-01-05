@@ -37,35 +37,48 @@ const ProjectCard = ({ project, position }) => {
     <motion.div
       variants={variants}
       animate={position}
+      whileHover={{
+        y: -14,
+        scale: position === "center" ? 1.03 : 0.92,
+      }}
       transition={{ type: "spring", stiffness: 220, damping: 26 }}
       className="absolute"
       style={{ perspective: 1400 }}
     >
       <div
         className="
-          w-[340px] rounded-2xl overflow-hidden
-          bg-gradient-to-br from-[#0b1020] via-[#121a35] to-[#0b1020]
-          border border-white/10
-          shadow-[0_30px_100px_rgba(0,0,0,0.85)]
-        "
+    group
+    w-[340px] rounded-2xl overflow-hidden
+    bg-gradient-to-br from-[#0b1020] via-[#121a35] to-[#0b1020]
+    border border-white/10
+    shadow-[0_30px_100px_rgba(0,0,0,0.85)]
+    transition-all duration-500
+    hover:border-violet-400/40
+    hover:shadow-[0_40px_120px_rgba(145,94,255,0.25)]
+  "
       >
         <div className="relative h-[200px]">
           <img
             src={project.image}
             alt={project.name}
-            className="w-full h-full object-contain"
+            className="
+    w-full h-full object-contain
+    transition-transform duration-700
+    group-hover:scale-105
+  "
           />
 
           {project.source_code_link && (
             <button
               onClick={() => window.open(project.source_code_link, "_blank")}
               className="
-                absolute top-3 right-3
-                w-10 h-10 rounded-full
-                bg-black/60 backdrop-blur-md
-                flex items-center justify-center
-                hover:scale-110 transition
-              "
+  absolute top-3 right-3
+  w-10 h-10 rounded-full
+  bg-black/60 backdrop-blur-md
+  flex items-center justify-center
+  transition-all duration-300
+  hover:scale-110 hover:bg-violet-600/70
+"
               title="Source Code"
             >
               <img
@@ -86,7 +99,14 @@ const ProjectCard = ({ project, position }) => {
 
           <div className="mt-4 flex flex-wrap gap-2">
             {project.tags.map((tag) => (
-              <span key={tag.name} className={`text-xs ${tag.color}`}>
+              <span
+                key={tag.name}
+                className={`
+    text-xs transition-colors duration-300
+    ${tag.color}
+    group-hover:brightness-125
+  `}
+              >
                 #{tag.name}
               </span>
             ))}
@@ -97,11 +117,12 @@ const ProjectCard = ({ project, position }) => {
               <button
                 onClick={() => window.open(project.live_link, "_blank")}
                 className="
-                  w-10 h-10 rounded-full
-                  bg-black/60 backdrop-blur-md
-                  flex items-center justify-center
-                  hover:scale-110 transition
-                "
+  w-10 h-10 rounded-full
+  bg-black/60 backdrop-blur-md
+  flex items-center justify-center
+  transition-all duration-300
+  hover:scale-110 hover:bg-violet-600/70
+"
                 title="Live Website"
               >
                 <TbWorld className="w-5 h-5 text-white" />
@@ -124,16 +145,6 @@ const Works = () => {
   return (
     <>
       <div className="mb-20">
-        <motion.p
-          variants={textVariant()}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          className={styles.sectionSubText}
-        >
-          My Work
-        </motion.p>
-
         <motion.h2
           variants={textVariant()}
           initial="hidden"
@@ -141,7 +152,7 @@ const Works = () => {
           viewport={{ once: true, amount: 0.25 }}
           className={styles.sectionHeadText}
         >
-          Projects.
+          Projects
         </motion.h2>
 
         <motion.p
