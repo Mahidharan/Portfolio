@@ -1,7 +1,7 @@
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
-
+import logo from "./logo.png";
 import css from "./tech/css.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
@@ -19,8 +19,8 @@ import linux from "./tech/linux.png";
 import network from "./tech/networking.png";
 
 export {
-  logo,
   github,
+  logo,
   menu,
   close,
   css,
