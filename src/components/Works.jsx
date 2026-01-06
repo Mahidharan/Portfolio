@@ -67,27 +67,6 @@ const ProjectCard = ({ project, position }) => {
     group-hover:scale-105
   "
           />
-
-          {project.source_code_link && (
-            <button
-              onClick={() => window.open(project.source_code_link, "_blank")}
-              className="
-  absolute top-3 right-3
-  w-10 h-10 rounded-full
-  bg-black/60 backdrop-blur-md
-  flex items-center justify-center
-  transition-all duration-300
-  hover:scale-110 hover:bg-violet-600/70
-"
-              title="Source Code"
-            >
-              <img
-                src={github}
-                alt="github"
-                className="w-5 h-5 object-contain"
-              />
-            </button>
-          )}
         </div>
 
         <div className="p-5">
@@ -112,23 +91,43 @@ const ProjectCard = ({ project, position }) => {
             ))}
           </div>
 
-          {project.live_link && (
-            <div className="mt-5 flex justify-start">
+          <div className="mt-4 flex gap-3">
+            {project.source_code_link && (
+              <button
+                onClick={() => window.open(project.source_code_link, "_blank")}
+                className="
+        w-10 h-10 rounded-full
+        bg-black/60 backdrop-blur-md
+        flex items-center justify-center
+        transition-all duration-300
+        hover:scale-110 hover:bg-violet-600/70
+      "
+                title="Source Code"
+              >
+                <img
+                  src={github}
+                  alt="github"
+                  className="w-5 h-5 object-contain"
+                />
+              </button>
+            )}
+
+            {project.live_link && (
               <button
                 onClick={() => window.open(project.live_link, "_blank")}
                 className="
-  w-10 h-10 rounded-full
-  bg-black/60 backdrop-blur-md
-  flex items-center justify-center
-  transition-all duration-300
-  hover:scale-110 hover:bg-violet-600/70
-"
+        w-10 h-10 rounded-full
+        bg-black/60 backdrop-blur-md
+        flex items-center justify-center
+        transition-all duration-300
+        hover:scale-110 hover:bg-violet-600/70
+      "
                 title="Live Website"
               >
                 <TbWorld className="w-5 h-5 text-white" />
               </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </motion.div>
@@ -144,28 +143,22 @@ const Works = () => {
 
   return (
     <>
-      <div className="mb-20">
-        <motion.h2
-          variants={textVariant()}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          className={styles.sectionHeadText}
-        >
-          Projects
-        </motion.h2>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mb-14 max-w-5xl"
+      >
+        <p className="text-sm uppercase tracking-widest text-[#915EFF] mb-2">
+          My Work
+        </p>
 
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-        >
-          A curated set of projects demonstrating my ability to build modern,
-          scalable, and visually polished applications.
-        </motion.p>
-      </div>
+        <h2 className="text-white text-[42px] sm:text-[52px] font-extrabold leading-tight">
+          Projects
+        </h2>
+        <div className="mt-4 w-28 h-[3px] rounded-full bg-gradient-to-r from-[#915EFF] to-[#4c1d95]" />
+      </motion.div>
 
       <motion.div
         variants={fadeIn("up", "spring", 0.2, 1)}

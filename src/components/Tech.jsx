@@ -3,6 +3,32 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+    scale: 0.9,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      damping: 14,
+    },
+  },
+};
 
 const SkillCard = ({ tech }) => {
   const x = useMotionValue(0);
@@ -23,16 +49,11 @@ const SkillCard = ({ tech }) => {
   };
 
   return (
-    <div style={{ perspective: "1000px" }}>
+    <motion.div variants={cardVariants} style={{ perspective: "1000px" }}>
       <motion.div
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        initial={{ rotateX: 0, rotateY: 0 }}
-        style={{
-          rotateX,
-          rotateY,
-          transformStyle: "preserve-3d",
-        }}
+        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
         className="
           w-28 h-28
           flex flex-col items-center justify-center
@@ -58,17 +79,39 @@ const SkillCard = ({ tech }) => {
           {tech.name}
         </p>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
 const Tech = () => {
   return (
-    <div className="flex flex-wrap justify-center gap-10">
-      {technologies.map((tech) => (
-        <SkillCard key={tech.name} tech={tech} />
-      ))}
-    </div>
+    <>
+      {/* Heading */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center mb-14"
+      >
+        <h2 className="text-white text-[32px] sm:text-[38px] font-bold">
+          Technical Skills
+        </h2>
+
+        <div className="mt-3 mx-auto w-24 h-[3px] rounded-full bg-[#915EFF]" />
+
+        <p className="mt-4 text-secondary text-[16px] max-w-2xl mx-auto leading-[28px]">
+          Technologies and tools I use to design, build, and deploy modern
+          full-stack applications.
+        </p>
+      </motion.div>
+
+      {/* Skills Grid */}
+      <div className="flex flex-wrap justify-center gap-10">
+        {technologies.map((tech) => (
+          <SkillCard key={tech.name} tech={tech} />
+        ))}
+      </div>
+    </>
   );
 };
 

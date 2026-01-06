@@ -11,6 +11,7 @@ const About = () => {
         <h2 className="text-white text-[28px] sm:text-[34px] font-bold">
           Get to know me better
         </h2>
+        <div className="mt-4 w-28 h-[3px] rounded-full bg-gradient-to-r from-[#915EFF] to-[#4c1d95]" />
       </motion.div>
 
       <motion.div
@@ -26,7 +27,7 @@ const About = () => {
         <p className="text-secondary text-[17px] leading-[30px] max-w-4xl">
           I’m a{" "}
           <span className="text-white font-semibold">
-            Full Stack MERN Developer
+            Software Developer  
           </span>{" "}
           focused on building secure, scalable, and real-world web applications.
           I enjoy working across the entire stack — translating ideas into

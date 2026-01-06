@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import hero3d from "../assets/hero-3d.png";
+import { MdOutlineFileDownload } from "react-icons/md";
 
 const Hero = () => {
   const hiText = "Hi, I’m";
@@ -80,7 +81,7 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-2 text-[22px] sm:text-[26px] text-[#915EFF] font-semibold"
           >
-            Full Stack Developer
+            Software Developer
           </motion.h2>
 
           <motion.p
@@ -89,8 +90,9 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-6 max-w-xl text-secondary text-[16px] sm:text-[18px] leading-relaxed"
           >
-            I build secure, scalable, real-world web applications with clean UI,
-            strong backend architecture, and meaningful user experiences.
+            A software developer focused on designing scalable systems, writing
+            clean code, and building reliable applications that solve real-world
+            problems.
           </motion.p>
 
           <motion.div
@@ -102,11 +104,12 @@ const Hero = () => {
             <a
               href="/Mahidharan_Resume.pdf"
               download
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl
                          bg-[#915EFF] text-white font-semibold
                          hover:bg-[#7c4dff] transition
                          shadow-lg shadow-violet-500/30"
             >
+              <MdOutlineFileDownload className="text-3xl" />
               Download Resume
             </a>
           </motion.div>
