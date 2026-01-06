@@ -3,6 +3,8 @@ import { styles } from "../styles";
 import hero3d from "../assets/hero-3d.png";
 
 const Hero = () => {
+  const hiText = "Hi, I’m";
+  const nameText = "Mahidharan";
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0b0f1a] via-[#050816] to-black" />
@@ -13,21 +15,63 @@ const Hero = () => {
       >
         <div className="flex flex-col items-start">
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-secondary text-lg tracking-wide"
+            className="text-secondary text-lg tracking-wide flex"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.05,
+                },
+              },
+            }}
           >
-            Hi, I’m
+            {hiText.split("").map((char, index) => (
+              <motion.span
+                key={index}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1 },
+                }}
+              >
+                {char}
+              </motion.span>
+            ))}
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-2 text-[42px] sm:text-[56px] lg:text-[68px] font-extrabold text-white leading-tight"
+            className="mt-2 text-[42px] sm:text-[56px] lg:text-[68px]
+             font-extrabold text-white leading-tight flex"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: {
+                  delayChildren: hiText.length * 0.05 + 0.2,
+                  staggerChildren: 0.14,
+                },
+              },
+            }}
           >
-            Mahidharan
+            {nameText.split("").map((char, index) => (
+              <motion.span
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      type: "spring",
+                      stiffness: 120,
+                      damping: 18,
+                    },
+                  },
+                }}
+              >
+                {char}
+              </motion.span>
+            ))}
           </motion.h1>
 
           <motion.h2

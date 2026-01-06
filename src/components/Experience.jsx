@@ -34,12 +34,19 @@ const ExperienceCard = ({ experience }) => {
     >
       <div>
         <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
-        <p
-          className="text-secondary text-[16px] font-semibold"
-          style={{ margin: 0 }}
-        >
+        <p className="text-secondary text-[16px] font-semibold m-0">
           {experience.company_name}
         </p>
+
+        {experience.degree && (
+          <p className="text-white-100 text-[14px] mt-1">{experience.degree}</p>
+        )}
+
+        {experience.cgpa && (
+          <p className="text-[#915EFF] text-[14px] mt-1 font-medium">
+            {experience.cgpa}
+          </p>
+        )}
       </div>
 
       <ul className="mt-5 list-disc ml-5 space-y-2">
@@ -59,16 +66,22 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
+      <motion.div variants={textVariant(0.1)} className="text-center">
+        <h2
+          className="
+            text-white
+            text-[28px] sm:text-[34px]
+            font-bold
+            tracking-wide
+          "
+        >
           What I have done so far
-        </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience
         </h2>
+
+        <div className="mt-3 mx-auto w-20 h-[3px] rounded-full bg-[#915EFF]" />
       </motion.div>
 
-      <div className="mt-20 flex flex-col">
+      <div className="mt-16 flex flex-col">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard

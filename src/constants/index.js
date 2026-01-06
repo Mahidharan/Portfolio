@@ -14,6 +14,8 @@ import {
   carthuntImg,
   linux,
   network,
+  collegeLogo,
+  logo,
 } from "../assets";
 
 export const navLinks = [
@@ -38,7 +40,9 @@ const technologies = [
 const experiences = [
   {
     title: "BCA Student",
-    company_name: "Undergraduate Program",
+    company_name: "Karpagam Academy of Higher Education",
+    degree: "Bachelor of Computer Applications",
+    cgpa: "CGPA: 7.70 / 10",
     iconBg: "#1d1836",
     date: "2023 – 2026",
     points: [
@@ -46,6 +50,7 @@ const experiences = [
       "Built multiple frontend and backend projects using React and Node.js.",
       "Focused on writing clean, scalable, and maintainable code.",
     ],
+    icon: collegeLogo,
   },
   {
     title: "MERN Stack Developer",
@@ -58,6 +63,7 @@ const experiences = [
       "Worked with Cloudinary for image & resume uploads.",
       "Built real-time chat features using WebSockets.",
     ],
+    icon: logo,
   },
 ];
 

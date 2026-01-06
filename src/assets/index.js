@@ -17,6 +17,7 @@ import carthuntImg from "./projects/carthunt.png";
 import miscImg from "./projects/misc.jpeg";
 import linux from "./tech/linux.png";
 import network from "./tech/networking.png";
+import collegeLogo from "./college.png";
 
 export {
   github,
@@ -38,4 +39,5 @@ export {
   miscImg,
   linux,
   network,
+  collegeLogo,
 };
