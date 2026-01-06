@@ -18,6 +18,9 @@ import miscImg from "./projects/misc.jpeg";
 import linux from "./tech/linux.png";
 import network from "./tech/networking.png";
 import collegeLogo from "./college.png";
+import express from "./tech/express.png";
+import postman from "./tech/postman.png";
+import websocket from "./tech/websocket.svg";
 
 export {
   github,
@@ -40,4 +43,7 @@ export {
   linux,
   network,
   collegeLogo,
+  express,
+  postman,
+  websocket,
 };

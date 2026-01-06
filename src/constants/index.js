@@ -16,6 +16,9 @@ import {
   network,
   collegeLogo,
   logo,
+  express,
+  postman,
+  websocket,
 } from "../assets";
 
 export const navLinks = [
@@ -31,6 +34,9 @@ const technologies = [
   { name: "React", icon: reactjs },
   { name: "Tailwind CSS", icon: tailwind },
   { name: "Node.js", icon: nodejs },
+  { name: "Express", icon: express },
+  { name: "Postman", icon: postman },
+  { name: "WebSocket", icon: websocket },
   { name: "MongoDB", icon: mongodb },
   { name: "Git & GitHub", icon: git },
   { name: "Linux", icon: linux },
