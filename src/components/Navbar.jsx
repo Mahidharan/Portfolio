@@ -12,7 +12,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 100);
+      setScrolled(window.scrollY > 80);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -21,13 +21,20 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${
-        styles.paddingX
-      } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? "bg-primary" : "bg-transparent"
-      }`}
+      className={`
+        cursor-disable
+
+        fixed top-0 z-50 w-full
+        ${styles.paddingX}
+        transition-all duration-300
+        ${
+          scrolled
+            ? "bg-gradient-to-r from-[#0b0f1f]/80 via-[#0e1230]/80 to-[#0b0f1f]/80 backdrop-blur-md border-b border-white/10"
+            : "bg-transparent"
+        }
+      `}
     >
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-[70px]">
         <Link
           to="/"
           className="flex items-center gap-2"
@@ -37,54 +44,79 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex">
+          <span className="text-white font-bold text-[18px] tracking-wide">
             Mahidharan
-          </p>
+          </span>
         </Link>
 
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="hidden sm:flex gap-10">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${
-                active === nav.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
               onClick={() => setActive(nav.title)}
+              className="relative cursor-pointer group"
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a
+                href={`#${nav.id}`}
+                className={`
+                  text-[16px] font-medium transition-colors
+                  ${active === nav.title ? "text-white" : "text-secondary"}
+                  group-hover:text-white
+                `}
+              >
+                {nav.title}
+              </a>
+
+              <span
+                className={`
+                  absolute -bottom-1 left-0 h-[2px]
+                  bg-gradient-to-r from-[#915EFF] to-[#c084fc]
+                  transition-all duration-300
+                  ${active === nav.title ? "w-full" : "w-0 group-hover:w-full"}
+                `}
+              />
             </li>
           ))}
         </ul>
 
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="sm:hidden flex items-center">
           <img
             src={toggle ? close : menu}
             alt="menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
+            className="w-7 h-7 cursor-pointer"
             onClick={() => setToggle(!toggle)}
           />
 
           <div
-            className={`${
-              toggle ? "flex" : "hidden"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            className={`
+              absolute top-[70px] right-4
+              ${toggle ? "flex" : "hidden"}
+              flex-col gap-4
+              p-6 min-w-[180px]
+              rounded-xl
+              bg-gradient-to-br from-[#0b0f1f]/90 via-[#0e1230]/90 to-[#0b0f1f]/90
+              backdrop-blur-lg
+              border border-white/10
+              shadow-2xl
+            `}
           >
-            <ul className="list-none flex flex-col gap-4">
-              {navLinks.map((nav) => (
-                <li
-                  key={nav.id}
-                  className={`font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  }`}
-                  onClick={() => {
-                    setToggle(false);
-                    setActive(nav.title);
-                  }}
-                >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
-                </li>
-              ))}
-            </ul>
+            {navLinks.map((nav) => (
+              <a
+                key={nav.id}
+                href={`#${nav.id}`}
+                onClick={() => {
+                  setToggle(false);
+                  setActive(nav.title);
+                }}
+                className={`
+                  text-[16px] font-medium
+                  ${active === nav.title ? "text-white" : "text-secondary"}
+                  hover:text-white transition
+                `}
+              >
+                {nav.title}
+              </a>
+            ))}
           </div>
         </div>
       </div>

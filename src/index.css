@@ -202,3 +202,8 @@
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
+
+.cursor-hover .cursor-follower {
+  transform: scale(1.6);
+  background-color: rgba(145, 94, 255, 0.2);
+}

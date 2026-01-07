@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
+import CursorFollower from "./components/CursorFollower";
 
 import {
   About,
@@ -18,6 +19,8 @@ const App = () => {
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <StarsCanvas />
           <Navbar />
+          <CursorFollower />
+
           <Hero />
         </div>
         <About />

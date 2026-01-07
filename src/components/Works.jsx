@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { TbChevronLeft, TbChevronRight, TbWorld } from "react-icons/tb";
 
-import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
@@ -47,6 +46,7 @@ const ProjectCard = ({ project, position }) => {
     >
       <div
         className="
+        cursor-disable
     group
     w-[340px] rounded-2xl overflow-hidden
     bg-gradient-to-br from-[#0b1020] via-[#121a35] to-[#0b1020]
@@ -96,6 +96,7 @@ const ProjectCard = ({ project, position }) => {
               <button
                 onClick={() => window.open(project.source_code_link, "_blank")}
                 className="
+
         w-10 h-10 rounded-full
         bg-black/60 backdrop-blur-md
         flex items-center justify-center
@@ -116,6 +117,7 @@ const ProjectCard = ({ project, position }) => {
               <button
                 onClick={() => window.open(project.live_link, "_blank")}
                 className="
+                cursor-disable
         w-10 h-10 rounded-full
         bg-black/60 backdrop-blur-md
         flex items-center justify-center

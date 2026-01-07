@@ -72,7 +72,6 @@ const About = () => {
           </p>
         </div>
 
-        {/* FOOT TAGLINE */}
         <div className="mt-6 text-[#915EFF] text-sm tracking-widest">
           BUILD · IMPROVE · SCALE · SHIP
         </div>
