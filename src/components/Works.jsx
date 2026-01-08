@@ -5,9 +5,11 @@ import { TbChevronLeft, TbChevronRight, TbWorld } from "react-icons/tb";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn } from "../utils/motion";
 
-const ProjectCard = ({ project, position }) => {
+const ProjectCard = ({ project, position, isMobile }) => {
+  const offset = isMobile ? 160 : 380;
+
   const variants = {
     center: {
       scale: 1,
@@ -20,15 +22,15 @@ const ProjectCard = ({ project, position }) => {
       scale: 0.85,
       opacity: 0.45,
       zIndex: 1,
-      rotateY: 18,
-      x: -380,
+      rotateY: 12,
+      x: -offset,
     },
     right: {
       scale: 0.85,
       opacity: 0.45,
       zIndex: 1,
-      rotateY: -18,
-      x: 380,
+      rotateY: -12,
+      x: offset,
     },
   };
 
@@ -47,25 +49,26 @@ const ProjectCard = ({ project, position }) => {
       <div
         className="
         cursor-disable
-    group
-    w-[340px] rounded-2xl overflow-hidden
-    bg-gradient-to-br from-[#0b1020] via-[#121a35] to-[#0b1020]
-    border border-white/10
-    shadow-[0_30px_100px_rgba(0,0,0,0.85)]
-    transition-all duration-500
-    hover:border-violet-400/40
-    hover:shadow-[0_40px_120px_rgba(145,94,255,0.25)]
-  "
+          group
+          w-[280px] sm:w-[320px] md:w-[340px]
+          rounded-2xl overflow-hidden
+          bg-gradient-to-br from-[#0b1020] via-[#121a35] to-[#0b1020]
+          border border-white/10
+          shadow-[0_30px_100px_rgba(0,0,0,0.85)]
+          transition-all duration-500
+          hover:border-violet-400/40
+          hover:shadow-[0_40px_120px_rgba(145,94,255,0.25)]
+        "
       >
-        <div className="relative h-[200px]">
+        <div className="relative h-[180px]">
           <img
             src={project.image}
             alt={project.name}
             className="
-    w-full h-full object-contain
-    transition-transform duration-700
-    group-hover:scale-105
-  "
+              w-full h-full object-contain
+              transition-transform duration-700
+              group-hover:scale-105
+            "
           />
         </div>
 
@@ -80,11 +83,7 @@ const ProjectCard = ({ project, position }) => {
             {project.tags.map((tag) => (
               <span
                 key={tag.name}
-                className={`
-    text-xs transition-colors duration-300
-    ${tag.color}
-    group-hover:brightness-125
-  `}
+                className={`text-xs ${tag.color} transition group-hover:brightness-125`}
               >
                 #{tag.name}
               </span>
@@ -96,20 +95,14 @@ const ProjectCard = ({ project, position }) => {
               <button
                 onClick={() => window.open(project.source_code_link, "_blank")}
                 className="
-
-        w-10 h-10 rounded-full
-        bg-black/60 backdrop-blur-md
-        flex items-center justify-center
-        transition-all duration-300
-        hover:scale-110 hover:bg-violet-600/70
-      "
-                title="Source Code"
+                  w-10 h-10 rounded-full
+                  bg-black/60 backdrop-blur-md
+                  flex items-center justify-center
+                  transition-all duration-300
+                  hover:scale-110 hover:bg-violet-600/70
+                "
               >
-                <img
-                  src={github}
-                  alt="github"
-                  className="w-5 h-5 object-contain"
-                />
+                <img src={github} alt="github" className="w-5 h-5" />
               </button>
             )}
 
@@ -117,16 +110,14 @@ const ProjectCard = ({ project, position }) => {
               <button
                 onClick={() => window.open(project.live_link, "_blank")}
                 className="
-                cursor-disable
-        w-10 h-10 rounded-full
-        bg-black/60 backdrop-blur-md
-        flex items-center justify-center
-        transition-all duration-300
-        hover:scale-110 hover:bg-violet-600/70
-      "
-                title="Live Website"
+                  w-10 h-10 rounded-full
+                  bg-black/60 backdrop-blur-md
+                  flex items-center justify-center
+                  transition-all duration-300
+                  hover:scale-110 hover:bg-violet-600/70
+                "
               >
-                <TbWorld className="w-5 h-5 text-white" />
+                <TbWorld className="text-white w-5 h-5" />
               </button>
             )}
           </div>
@@ -139,6 +130,7 @@ const ProjectCard = ({ project, position }) => {
 const Works = () => {
   const [active, setActive] = useState(0);
   const total = projects.length;
+  const isMobile = window.innerWidth < 640;
 
   const prev = (active - 1 + total) % total;
   const next = (active + 1) % total;
@@ -149,56 +141,83 @@ const Works = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6 }}
         className="mb-14 max-w-5xl"
       >
         <p className="text-sm uppercase tracking-widest text-[#915EFF] mb-2">
           My Work
         </p>
 
-        <h2 className="text-white text-[42px] sm:text-[52px] font-extrabold leading-tight">
+        <h2 className="text-white text-[42px] sm:text-[52px] font-extrabold">
           Projects
         </h2>
-        <div className="mt-4 w-28 h-[3px] rounded-full bg-gradient-to-r from-[#915EFF] to-[#4c1d95]" />
+
+        <div className="mt-4 w-28 h-[3px] bg-gradient-to-r from-[#915EFF] to-[#4c1d95]" />
       </motion.div>
 
       <motion.div
         variants={fadeIn("up", "spring", 0.2, 1)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
-        className="relative h-[560px] flex items-center justify-center overflow-hidden"
+        viewport={{ once: true }}
+        className="relative h-[520px] flex items-center justify-center overflow-hidden"
       >
-        <ProjectCard project={projects[prev]} position="left" />
-        <ProjectCard project={projects[active]} position="center" />
-        <ProjectCard project={projects[next]} position="right" />
+        <ProjectCard
+          project={projects[prev]}
+          position="left"
+          isMobile={isMobile}
+        />
+        <ProjectCard
+          project={projects[active]}
+          position="center"
+          isMobile={isMobile}
+        />
+        <ProjectCard
+          project={projects[next]}
+          position="right"
+          isMobile={isMobile}
+        />
 
+        <div className="hidden sm:block">
+          <button
+            onClick={() => setActive(prev)}
+            className="absolute left-6 top-1/2 -translate-y-1/2
+              w-12 h-12 rounded-full
+              bg-black/40 backdrop-blur-md
+              flex items-center justify-center
+              hover:scale-110 transition"
+          >
+            <TbChevronLeft className="text-white w-6 h-6" />
+          </button>
+
+          <button
+            onClick={() => setActive(next)}
+            className="absolute right-6 top-1/2 -translate-y-1/2
+              w-12 h-12 rounded-full
+              bg-black/40 backdrop-blur-md
+              flex items-center justify-center
+              hover:scale-110 transition"
+          >
+            <TbChevronRight className="text-white w-6 h-6" />
+          </button>
+        </div>
+      </motion.div>
+
+      <div className="sm:hidden mt-6 flex justify-center gap-6">
         <button
           onClick={() => setActive(prev)}
-          className="
-            absolute left-6 z-20
-            w-12 h-12 rounded-full
-            bg-black/40 backdrop-blur-md
-            flex items-center justify-center
-            hover:scale-110 transition
-          "
+          className="w-12 h-12 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center"
         >
           <TbChevronLeft className="text-white w-6 h-6" />
         </button>
 
         <button
           onClick={() => setActive(next)}
-          className="
-            absolute right-6 z-20
-            w-12 h-12 rounded-full
-            bg-black/40 backdrop-blur-md
-            flex items-center justify-center
-            hover:scale-110 transition
-          "
+          className="w-12 h-12 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center"
         >
           <TbChevronRight className="text-white w-6 h-6" />
         </button>
-      </motion.div>
+      </div>
     </>
   );
 };
