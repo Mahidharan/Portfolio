@@ -85,8 +85,7 @@ const Hero = () => {
 
           <motion.a
             href="/Mahidharan_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            download
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
