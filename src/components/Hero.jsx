@@ -8,14 +8,16 @@ const Hero = () => {
   const nameText = "Mahidharan";
 
   return (
-    <section className="relative w-full min-h-screen flex items-center overflow-hidden">
+    <section className="relative w-full flex items-center overflow-hidden pt-[90px] lg:pt-[110px]">
+      {/* Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0b0f1a] via-[#050816] to-black" />
-      <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-violet-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-1/2 left-1/2 w-[520px] h-[520px] bg-violet-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
 
       <div
         className={`max-w-7xl mx-auto w-full ${styles.paddingX}
-        flex flex-col lg:grid lg:grid-cols-2 gap-14 items-center`}
+        grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
       >
+        {/* LEFT CONTENT */}
         <div className="flex flex-col items-start">
           <motion.p
             className="text-secondary text-lg tracking-wide flex"
@@ -34,7 +36,8 @@ const Hero = () => {
           </motion.p>
 
           <motion.h1
-            className="mt-2 text-[42px] sm:text-[56px] lg:text-[68px] font-extrabold text-white leading-tight flex"
+            className="mt-2 text-[42px] sm:text-[56px] lg:text-[64px]
+            font-extrabold text-white leading-tight flex"
             initial="hidden"
             animate="visible"
             variants={{
@@ -64,19 +67,19 @@ const Hero = () => {
           </motion.h1>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.25 }}
             className="mt-2 text-[22px] sm:text-[26px] text-[#915EFF] font-semibold"
           >
             Software Developer
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="mt-6 max-w-xl text-secondary text-[16px] sm:text-[18px] leading-relaxed"
+            transition={{ delay: 0.35 }}
+            className="mt-5 max-w-xl text-secondary text-[16px] sm:text-[18px] leading-relaxed"
           >
             A software developer focused on designing scalable systems, writing
             clean code, and building reliable applications that solve real-world
@@ -85,11 +88,12 @@ const Hero = () => {
 
           <motion.a
             href="/Mahidharan_Resume.pdf"
-            download
-            initial={{ opacity: 0, y: 20 }}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="mt-10 inline-flex items-center gap-2 px-6 py-3 rounded-xl
+            transition={{ delay: 0.45 }}
+            className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl
               bg-[#915EFF] text-white font-semibold
               hover:bg-[#7c4dff] transition
               shadow-lg shadow-violet-500/30"
@@ -99,18 +103,19 @@ const Hero = () => {
           </motion.a>
         </div>
 
+        {/* RIGHT IMAGE */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 30 }}
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.3 }}
-          className="w-full flex justify-center lg:justify-end"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="relative flex justify-center lg:justify-end"
         >
           <motion.img
             src={hero3d}
-            alt="3D Developer Illustration"
-            className="w-[260px] sm:w-[340px] lg:w-[420px] xl:w-[480px]
-              drop-shadow-[0_40px_80px_rgba(145,94,255,0.25)]"
-            animate={{ y: [0, -12, 0] }}
+            alt="Developer Illustration"
+            className="w-[240px] sm:w-[300px] lg:w-[380px] xl:w-[420px]
+              drop-shadow-[0_35px_70px_rgba(145,94,255,0.25)]"
+            animate={{ y: [0, -10, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
         </motion.div>
