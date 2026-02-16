@@ -8,6 +8,7 @@ import {
   nodejs,
   mongodb,
   git,
+  codescribeImg,
   nextstepImg,
   moviestreamImg,
   currencyImg,
@@ -79,8 +80,24 @@ const experiences = [
 
 const projects = [
   {
+    name: "CodeScribe",
+    date: "2026",
+    description:
+      "A Visual Studio Code extension that generates, updates, and keeps project documentation in sync with your codebase.",
+    tags: [
+      { name: "Typescript", color: "blue-text-gradient" },
+      { name: "VS code API", color: "green-text-gradient" },
+      { name: "OpenRouter", color: "white-text-gradient" },
+    ],
+    image: codescribeImg,
+    source_code_link: "https://github.com/Mahidharan/CodeScribe",
+
+    live_link:
+      "https://marketplace.visualstudio.com/items?itemName=mahidharan.codescribe-readme-ai",
+  },
+  {
     name: "NextStep",
-    date: "2024 – Present",
+    date: "2025",
     description:
       "A full-stack MERN platform designed to help students share real interview experiences, connect with peers, and prepare smarter for placements.",
     points: [
@@ -107,12 +124,6 @@ const projects = [
     date: "2024",
     description:
       "A Netflix-inspired movie streaming web application built with React and Firebase, focusing on authentication, UI design, and real-time data handling.",
-    points: [
-      "Built reusable UI components using React with a Netflix-style layout",
-      "Integrated Firebase Authentication for secure login and user management",
-      "Used Firebase Firestore to manage movie content and user data",
-      "Implemented responsive design for mobile and desktop devices",
-    ],
     tags: [
       { name: "React", color: "blue-text-gradient" },
       { name: "Firebase", color: "green-text-gradient" },
@@ -128,12 +139,7 @@ const projects = [
     date: "2024",
     description:
       "A full-stack music streaming application developed using the MERN stack, enabling users to browse, play, and manage music content.",
-    points: [
-      "Developed backend APIs using Node.js and Express",
-      "Designed MongoDB schemas for music and user data",
-      "Built interactive frontend using React for seamless playback",
-      "Focused on scalable architecture and clean code structure",
-    ],
+
     tags: [
       { name: "MERN", color: "blue-text-gradient" },
       { name: "JWT", color: "green-text-gradient" },
@@ -149,12 +155,6 @@ const projects = [
     date: "2023",
     description:
       "A lightweight currency converter web application built with React, providing real-time exchange rate conversion with a clean user interface.",
-    points: [
-      "Integrated third-party APIs to fetch live exchange rates",
-      "Implemented dynamic currency selection and instant conversion",
-      "Handled loading states and API errors gracefully",
-      "Designed minimal and user-friendly interface",
-    ],
     tags: [
       { name: "react", color: "blue-text-gradient" },
       { name: "api", color: "green-text-gradient" },
@@ -169,15 +169,6 @@ const projects = [
     date: "2024 – Present",
     description:
       "A E-commerce website built with HTML, CSS, Javascript providing add to cart feature and animation , it also calculate the total amount in the cart  ",
-    points: [
-      "Built a responsive e-commerce website using HTML, CSS, and JavaScript",
-      "Implemented add-to-cart functionality with real-time item count updates",
-      "Developed dynamic cart logic to calculate total items and total price instantly",
-      "Added smooth animations and visual feedback when products are added to the cart",
-      "Managed cart state using JavaScript for seamless user interaction",
-      "Designed a clean, user-friendly UI optimized for desktop and mobile devices",
-    ],
-
     tags: [
       { name: "HTML", color: "orange-text-gradient" },
       { name: "CSS", color: "blue-text-gradient" },

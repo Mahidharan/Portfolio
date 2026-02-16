@@ -65,7 +65,7 @@ const ProjectCard = ({ project, position, isMobile }) => {
             src={project.image}
             alt={project.name}
             className="
-              w-full h-full object-contain
+              w-full h-full object-cover
               transition-transform duration-700
               group-hover:scale-105
             "
