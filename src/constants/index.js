@@ -1,5 +1,6 @@
 import {
   javascript,
+  typescript,
   html,
   css,
   reactjs,
@@ -33,6 +34,7 @@ const technologies = [
   { name: "HTML", icon: html },
   { name: "CSS", icon: css },
   { name: "JavaScript", icon: javascript },
+  { name: "TypeScript", icon: typescript },
   { name: "React", icon: reactjs },
   { name: "Tailwind CSS", icon: tailwind },
   { name: "Node.js", icon: nodejs },
