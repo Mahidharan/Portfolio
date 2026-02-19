@@ -34,7 +34,7 @@ const Navbar = () => {
         }
       `}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-[70px]">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-[60px] sm:h-[70px]">
         <Link
           to="/"
           className="flex items-center gap-2"
@@ -43,13 +43,17 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-          <span className="text-white font-bold text-[18px] tracking-wide">
+          <img
+            src={logo}
+            alt="logo"
+            className="w-8 h-8 sm:w-9 sm:h-9 object-contain"
+          />
+          <span className="text-white font-bold text-[16px] sm:text-[18px] tracking-wide">
             Mahidharan
           </span>
         </Link>
 
-        <ul className="hidden sm:flex gap-10">
+        <ul className="hidden sm:flex gap-6 md:gap-10">
           {navLinks.map((nav) => (
             <li
               key={nav.id}

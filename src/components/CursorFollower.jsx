@@ -2,6 +2,24 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const CursorFollower = () => {
+  // Hide on mobile/touch devices
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(
+        "ontouchstart" in window ||
+          navigator.maxTouchPoints > 0 ||
+          window.innerWidth < 768,
+      );
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -77,7 +95,8 @@ const CursorFollower = () => {
     };
   }, [mouseX, mouseY]);
 
-  if (hidden) return null;
+  // Don't render on mobile
+  if (isMobile || hidden) return null;
 
   return (
     <>

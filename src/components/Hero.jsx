@@ -8,19 +8,19 @@ const Hero = () => {
   const nameText = "Mahidharan";
 
   return (
-    <section className="relative w-full flex items-center overflow-hidden pt-[80px] pb-12 min-h-[85vh]">
+    <section className="relative w-full flex items-center overflow-hidden pt-[70px] sm:pt-[80px] pb-8 sm:pb-12 min-h-[90vh] sm:min-h-[85vh]">
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black via-[#0a0a0a] to-[#1a0000]" />
-      <div className="absolute top-1/2 left-1/2 w-[520px] h-[520px] bg-red-600/15 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-1/2 left-1/2 w-[280px] sm:w-[520px] h-[280px] sm:h-[520px] bg-red-600/15 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
 
       <div
         className={`max-w-7xl mx-auto w-full ${styles.paddingX}
-        grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}
+        grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center`}
       >
         {/* LEFT CONTENT */}
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start text-center sm:text-left">
           <motion.p
-            className="text-secondary text-lg tracking-wide flex"
+            className="text-secondary text-base sm:text-lg tracking-wide flex justify-center sm:justify-start w-full"
             initial="hidden"
             animate="visible"
             variants={{ visible: { transition: { staggerChildren: 0.05 } } }}
@@ -36,8 +36,8 @@ const Hero = () => {
           </motion.p>
 
           <motion.h1
-            className="mt-2 text-[42px] sm:text-[56px] lg:text-[64px]
-            font-extrabold text-white leading-tight flex"
+            className="mt-2 text-[36px] sm:text-[56px] lg:text-[64px]
+            font-extrabold text-white leading-tight flex flex-wrap justify-center sm:justify-start w-full"
             initial="hidden"
             animate="visible"
             variants={{
@@ -70,7 +70,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25 }}
-            className="mt-2 text-[22px] sm:text-[26px] text-[#DC2626] font-semibold"
+            className="mt-2 text-[20px] sm:text-[26px] text-[#DC2626] font-semibold"
           >
             Software Developer
           </motion.h2>
@@ -79,7 +79,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35 }}
-            className="mt-5 max-w-xl text-secondary text-[16px] sm:text-[18px] leading-relaxed"
+            className="mt-4 sm:mt-5 max-w-xl text-secondary text-[15px] sm:text-[18px] leading-relaxed"
           >
             A software developer focused on designing scalable systems, writing
             clean code, and building reliable applications that solve real-world
@@ -93,12 +93,12 @@ const Hero = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45 }}
-            className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl
+            className="mt-6 sm:mt-8 mx-auto sm:mx-0 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base
               bg-gradient-to-r from-[#DC2626] to-[#991B1B] text-white font-semibold
               hover:from-[#EF4444] hover:to-[#DC2626] transition
               shadow-lg shadow-red-600/40"
           >
-            <MdOutlineFileDownload className="text-2xl" />
+            <MdOutlineFileDownload className="text-xl sm:text-2xl" />
             Download Resume
           </motion.a>
         </div>
@@ -108,12 +108,12 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="relative flex justify-center lg:justify-end"
+          className="relative flex justify-center lg:justify-end mt-8 lg:mt-0"
         >
           <motion.img
             src={hero3d}
             alt="Developer Illustration"
-            className="w-[240px] sm:w-[300px] lg:w-[380px] xl:w-[420px]
+            className="w-[200px] sm:w-[280px] md:w-[320px] lg:w-[380px] xl:w-[420px]
               drop-shadow-[0_35px_70px_rgba(220,38,38,0.35)]"
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}

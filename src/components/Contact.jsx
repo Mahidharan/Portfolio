@@ -53,12 +53,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="cursor-disable xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
+    <div className="cursor-disable xl:mt-12 flex xl:flex-row flex-col-reverse gap-6 sm:gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-gradient-to-br from-[#1a0a0a] to-[#0a0a0a] border border-red-900/20 p-8 rounded-2xl"
+        className="flex-[0.75] bg-gradient-to-br from-[#1a0a0a] to-[#0a0a0a] border border-red-900/20 p-5 sm:p-8 rounded-2xl"
       >
-        <h1 className=" uppercase tracking-widest text-3xl">
+        <h1 className="uppercase tracking-widest text-2xl sm:text-3xl">
           Get in <span className="uppercase text-[#DC2626]"> touch</span>
         </h1>
 
@@ -79,42 +79,48 @@ const Contact = () => {
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-10 flex flex-col gap-8"
+          className="mt-8 sm:mt-10 flex flex-col gap-6 sm:gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-2">Your Name</span>
+            <span className="text-white font-medium mb-2 text-sm sm:text-base">
+              Your Name
+            </span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 text-white rounded-lg outline-none"
+              className="bg-tertiary py-3 sm:py-4 px-4 sm:px-6 text-white text-sm sm:text-base rounded-lg outline-none"
               placeholder="What's your good name?"
               required
             />
           </label>
 
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-2">Your Email</span>
+            <span className="text-white font-medium mb-2 text-sm sm:text-base">
+              Your Email
+            </span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 text-white rounded-lg outline-none"
+              className="bg-tertiary py-3 sm:py-4 px-4 sm:px-6 text-white text-sm sm:text-base rounded-lg outline-none"
               placeholder="What's your email address?"
               required
             />
           </label>
 
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-2">Your Message</span>
+            <span className="text-white font-medium mb-2 text-sm sm:text-base">
+              Your Message
+            </span>
             <textarea
               rows={6}
               name="message"
               value={form.message}
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 text-white rounded-lg outline-none"
+              className="bg-tertiary py-3 sm:py-4 px-4 sm:px-6 text-white text-sm sm:text-base rounded-lg outline-none"
               placeholder="What would you like to say?"
               required
             />
@@ -123,7 +129,7 @@ const Contact = () => {
           <button
             type="submit"
             className="
-              bg-gradient-to-r from-[#DC2626] to-[#991B1B] py-3 px-8 rounded-xl w-fit text-white font-bold
+              bg-gradient-to-r from-[#DC2626] to-[#991B1B] py-2.5 sm:py-3 px-6 sm:px-8 rounded-xl w-full sm:w-fit text-white font-bold text-sm sm:text-base
               hover:from-[#EF4444] hover:to-[#DC2626] transition shadow-lg shadow-red-600/40
             "
           >
@@ -145,23 +151,23 @@ const Contact = () => {
             href="https://www.linkedin.com/in/mahidharan"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-11 h-11 rounded-full bg-black/50 border border-red-900/30 flex items-center justify-center hover:bg-red-600/70 hover:border-red-600 transition"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/50 border border-red-900/30 flex items-center justify-center hover:bg-red-600/70 hover:border-red-600 transition"
           >
-            <FaLinkedinIn className="text-white text-xl" />
+            <FaLinkedinIn className="text-white text-lg sm:text-xl" />
           </a>
 
           <a
             href="mailto:mahidharan5612@gmail.com"
-            className="w-11 h-11 rounded-full bg-black/50 border border-red-900/30 flex items-center justify-center hover:bg-red-600/70 hover:border-red-600 transition"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/50 border border-red-900/30 flex items-center justify-center hover:bg-red-600/70 hover:border-red-600 transition"
           >
-            <MdEmail className="text-white text-xl" />
+            <MdEmail className="text-white text-lg sm:text-xl" />
           </a>
         </div>
       </motion.div>
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        className="xl:flex-1 xl:h-auto md:h-[450px] h-[300px]"
       >
         <EarthCanvas />
       </motion.div>

@@ -55,7 +55,7 @@ const SkillCard = ({ tech }) => {
         onMouseLeave={handleMouseLeave}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
         className="
-          w-28 h-28
+          w-24 h-24 sm:w-28 sm:h-28
           flex flex-col items-center justify-center
           rounded-xl
           bg-white/5 backdrop-blur-md
@@ -69,7 +69,7 @@ const SkillCard = ({ tech }) => {
         <img
           src={tech.icon}
           alt={tech.name}
-          className="w-12 h-12 object-contain"
+          className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
           style={{ transform: "translateZ(40px)" }}
         />
 
@@ -92,22 +92,22 @@ const Tech = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-14"
+        className="text-center mb-10 sm:mb-14"
       >
-        <h2 className="text-white text-[32px] sm:text-[38px] font-bold">
+        <h2 className="text-white text-[28px] sm:text-[32px] md:text-[38px] font-bold">
           Technical Skills
         </h2>
 
-        <div className="mt-3 mx-auto w-24 h-[3px] rounded-full bg-gradient-to-r from-[#DC2626] to-[#7F1D1D]" />
+        <div className="mt-3 mx-auto w-20 sm:w-24 h-[3px] rounded-full bg-gradient-to-r from-[#DC2626] to-[#7F1D1D]" />
 
-        <p className="mt-4 text-secondary text-[16px] max-w-2xl mx-auto leading-[28px]">
+        <p className="mt-3 sm:mt-4 text-secondary text-[14px] sm:text-[16px] max-w-2xl mx-auto leading-[24px] sm:leading-[28px] px-4">
           Technologies and tools I use to design, build, and deploy modern
           full-stack applications.
         </p>
       </motion.div>
 
       {/* Skills Grid */}
-      <div className="flex flex-wrap justify-center gap-10">
+      <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-10">
         {technologies.map((tech) => (
           <SkillCard key={tech.name} tech={tech} />
         ))}

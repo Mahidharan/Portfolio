@@ -50,8 +50,8 @@ const ProjectCard = ({ project, position, isMobile }) => {
         className="
         cursor-disable
           group
-          w-[280px] sm:w-[320px] md:w-[360px]
-          rounded-3xl overflow-hidden
+          w-[260px] sm:w-[280px] md:w-[320px] lg:w-[360px]
+          rounded-2xl sm:rounded-3xl overflow-hidden
           border border-red-900/30
           bg-gradient-to-br from-[#0a0a0a] via-[#1a0000] to-black
           shadow-[0_30px_100px_rgba(0,0,0,0.95)]
@@ -60,7 +60,7 @@ const ProjectCard = ({ project, position, isMobile }) => {
           hover:shadow-[0_50px_140px_rgba(220,38,38,0.4)]
         "
       >
-        <div className="relative h-[190px]">
+        <div className="relative h-[160px] sm:h-[180px] md:h-[190px]">
           <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-transparent to-transparent" />
           <img
             src={project.image}
@@ -71,37 +71,37 @@ const ProjectCard = ({ project, position, isMobile }) => {
               group-hover:scale-110
             "
           />
-          <div className="absolute bottom-3 left-3 rounded-full bg-black/70 border border-red-600/30 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-red-400">
+          <div className="absolute bottom-3 left-3 rounded-full bg-black/70 border border-red-600/30 px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-red-400">
             Featured
           </div>
         </div>
 
-        <div className="p-6">
-          <h3 className="text-white text-xl font-bold tracking-wide">
+        <div className="p-4 sm:p-5 md:p-6">
+          <h3 className="text-white text-lg sm:text-xl font-bold tracking-wide">
             {project.name}
           </h3>
 
-          <p className="text-secondary text-sm mt-3 leading-relaxed">
+          <p className="text-secondary text-[13px] sm:text-sm mt-2 sm:mt-3 leading-relaxed">
             {project.description}
           </p>
 
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2">
             {project.tags.map((tag) => (
               <span
                 key={tag.name}
-                className={`rounded-full border border-red-900/30 bg-red-950/20 px-3 py-1 text-[11px] ${tag.color} transition group-hover:brightness-125`}
+                className={`rounded-full border border-red-900/30 bg-red-950/20 px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-[11px] ${tag.color} transition group-hover:brightness-125`}
               >
                 #{tag.name}
               </span>
             ))}
           </div>
 
-          <div className="mt-5 flex gap-3">
+          <div className="mt-4 sm:mt-5 flex gap-2 sm:gap-3">
             {project.source_code_link && (
               <button
                 onClick={() => window.open(project.source_code_link, "_blank")}
                 className="
-                  w-11 h-11 rounded-full
+                  w-10 h-10 sm:w-11 sm:h-11 rounded-full
                   border border-red-900/30
                   bg-black/60 backdrop-blur-md
                   flex items-center justify-center
@@ -110,7 +110,11 @@ const ProjectCard = ({ project, position, isMobile }) => {
                 "
                 aria-label="Open source code"
               >
-                <img src={github} alt="github" className="w-5 h-5" />
+                <img
+                  src={github}
+                  alt="github"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                />
               </button>
             )}
 
@@ -118,7 +122,7 @@ const ProjectCard = ({ project, position, isMobile }) => {
               <button
                 onClick={() => window.open(project.live_link, "_blank")}
                 className="
-                  w-11 h-11 rounded-full
+                  w-10 h-10 sm:w-11 sm:h-11 rounded-full
                   border border-red-900/30
                   bg-black/60 backdrop-blur-md
                   flex items-center justify-center
@@ -127,7 +131,7 @@ const ProjectCard = ({ project, position, isMobile }) => {
                 "
                 aria-label="Open live demo"
               >
-                <TbWorld className="text-white w-5 h-5" />
+                <TbWorld className="text-white w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             )}
           </div>
@@ -164,14 +168,14 @@ const Works = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mb-14 max-w-5xl"
+        className="mb-10 sm:mb-14 max-w-5xl"
       >
-        <div className="inline-flex items-center gap-2 rounded-full border border-red-900/30 bg-red-950/20 px-4 py-1 text-xs uppercase tracking-[0.3em] text-red-400">
+        <div className="inline-flex items-center gap-2 rounded-full border border-red-900/30 bg-red-950/20 px-3 sm:px-4 py-1 text-[10px] sm:text-xs uppercase tracking-[0.3em] text-red-400">
           <span className="h-1.5 w-1.5 rounded-full bg-[#DC2626] animate-pulse" />
           Selected Work
         </div>
 
-        <h2 className="mt-4 text-white text-[26px] sm:text-[26px] font-extrabold leading-tight">
+        <h2 className="mt-3 sm:mt-4 text-white text-[22px] sm:text-[26px] font-extrabold leading-tight">
           Projects that blend
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#DC2626] to-[#7F1D1D]">
             {" "}
@@ -180,14 +184,14 @@ const Works = () => {
           and performance
         </h2>
 
-        <p className="mt-4 text-secondary text-base sm:text-lg max-w-3xl">
+        <p className="mt-3 sm:mt-4 text-secondary text-[14px] sm:text-base md:text-lg max-w-3xl">
           A focused look at recent builds, product experiments, and launches.
           Each card includes the stack, story, and where to try it live.
         </p>
 
-        <div className="mt-4 flex items-center gap-3">
-          <div className="h-[3px] w-32 bg-gradient-to-r from-[#DC2626] to-[#7F1D1D]" />
-          <span className="text-xs text-red-400/70 italic flex items-center gap-2">
+        <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+          <div className="h-[3px] w-24 sm:w-32 bg-gradient-to-r from-[#DC2626] to-[#7F1D1D]" />
+          <span className="text-[10px] sm:text-xs text-red-400/70 italic flex items-center gap-2">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
@@ -202,7 +206,7 @@ const Works = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="relative h-[520px] sm:h-[560px] flex items-center justify-center overflow-hidden rounded-[28px] border border-red-900/30 bg-gradient-to-br from-black via-[#0f0000] to-black"
+        className="relative h-[450px] sm:h-[520px] md:h-[560px] flex items-center justify-center overflow-hidden rounded-2xl sm:rounded-[28px] border border-red-900/30 bg-gradient-to-br from-black via-[#0f0000] to-black"
       >
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(220,38,38,0.2),transparent_45%),radial-gradient(circle_at_70%_80%,rgba(153,27,27,0.2),transparent_45%)]" />
 

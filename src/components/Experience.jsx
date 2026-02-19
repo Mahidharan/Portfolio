@@ -41,29 +41,31 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className="text-white text-[24px] font-bold bg-gradient-to-r from-white to-red-200 bg-clip-text">
+        <h3 className="text-white text-[18px] sm:text-[22px] md:text-[24px] font-bold bg-gradient-to-r from-white to-red-200 bg-clip-text">
           {experience.title}
         </h3>
-        <p className="text-secondary text-[16px] font-semibold m-0">
+        <p className="text-secondary text-[14px] sm:text-[15px] md:text-[16px] font-semibold m-0">
           {experience.company_name}
         </p>
 
         {experience.degree && (
-          <p className="text-gray-300 text-[14px] mt-1">{experience.degree}</p>
+          <p className="text-gray-300 text-[12px] sm:text-[13px] md:text-[14px] mt-1">
+            {experience.degree}
+          </p>
         )}
 
         {experience.cgpa && (
-          <p className="text-[#EF4444] text-[15px] mt-1 font-semibold bg-red-950/30 inline-block px-3 py-1 rounded-full border border-red-900/30">
+          <p className="text-[#EF4444] text-[13px] sm:text-[14px] md:text-[15px] mt-1 font-semibold bg-red-950/30 inline-block px-2 sm:px-3 py-0.5 sm:py-1 rounded-full border border-red-900/30">
             {experience.cgpa}
           </p>
         )}
       </div>
 
-      <ul className="mt-5 list-disc ml-5 space-y-2">
+      <ul className="mt-3 sm:mt-4 md:mt-5 list-disc ml-4 sm:ml-5 space-y-1.5 sm:space-y-2">
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
+            className="text-white-100 text-[12px] sm:text-[13px] md:text-[14px] pl-1 tracking-wider"
           >
             {point}
           </li>
@@ -80,7 +82,7 @@ const Experience = () => {
         <h2
           className="
             text-white
-            text-[28px] sm:text-[34px]
+            text-[24px] sm:text-[28px] md:text-[34px]
             font-bold
             tracking-wide
           "
@@ -88,10 +90,10 @@ const Experience = () => {
           What I have done so far
         </h2>
 
-        <div className="mt-3 mx-auto w-20 h-[3px] rounded-full bg-gradient-to-r from-[#DC2626] to-[#7F1D1D]" />
+        <div className="mt-2 sm:mt-3 mx-auto w-16 sm:w-20 h-[3px] rounded-full bg-gradient-to-r from-[#DC2626] to-[#7F1D1D]" />
       </motion.div>
 
-      <div className="mt-10 flex flex-col">
+      <div className="mt-8 sm:mt-10 flex flex-col">
         <VerticalTimeline lineColor="rgba(220, 38, 38, 0.3)">
           {experiences.map((experience, index) => (
             <ExperienceCard
