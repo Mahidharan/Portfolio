@@ -160,7 +160,7 @@ const Works = () => {
 
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute -top-24 left-1/2 h-56 w-[520px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.3),rgba(10,10,10,0))] blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 left-1/2 h-56 w-[280px] sm:w-[400px] md:w-[520px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.3),rgba(10,10,10,0))] blur-3xl" />
       <div className="pointer-events-none absolute -bottom-20 right-10 h-48 w-48 rounded-full bg-[radial-gradient(circle_at_center,rgba(153,27,27,0.3),rgba(10,10,10,0))] blur-3xl" />
 
       <motion.div

@@ -11,7 +11,7 @@ const Hero = () => {
     <section className="relative w-full flex items-center overflow-hidden pt-[70px] sm:pt-[80px] pb-8 sm:pb-12 min-h-[90vh] sm:min-h-[85vh]">
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black via-[#0a0a0a] to-[#1a0000]" />
-      <div className="absolute top-1/2 left-1/2 w-[280px] sm:w-[520px] h-[280px] sm:h-[520px] bg-red-600/15 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-1/2 left-1/2 w-[280px] sm:w-[400px] md:w-[520px] h-[280px] sm:h-[400px] md:h-[520px] bg-red-600/15 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
 
       <div
         className={`max-w-7xl mx-auto w-full ${styles.paddingX}
