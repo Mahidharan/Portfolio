@@ -6,7 +6,15 @@ import { MdOutlineFileDownload } from "react-icons/md";
 const Hero = () => {
   const hiText = "Hi, I’m";
   const nameText = "Mahidharan";
-
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/Mahidharan_Resume.pdf";
+    link.download = "Mahidharan_Resume.pdf";
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <section className="relative w-full flex items-center overflow-hidden pt-[70px] sm:pt-[80px] pb-8 sm:pb-12 min-h-[90vh] sm:min-h-[85vh]">
       {/* Background */}
@@ -70,7 +78,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25 }}
-            className="mt-2 text-[20px] sm:text-[26px] text-[#DC2626] font-semibold"
+            className="mt-2 text-[20px] sm:text-[26px] text-[#DC2626] font-semibold w-full text-center sm:text-left"
           >
             Software Developer
           </motion.h2>
@@ -86,21 +94,19 @@ const Hero = () => {
             problems.
           </motion.p>
 
-          <motion.a
-            href="/Mahidharan_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.button
+            onClick={handleDownload}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45 }}
             className="mt-6 sm:mt-8 mx-auto sm:mx-0 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base
               bg-gradient-to-r from-[#DC2626] to-[#991B1B] text-white font-semibold
               hover:from-[#EF4444] hover:to-[#DC2626] transition
-              shadow-lg shadow-red-600/40"
+              shadow-lg shadow-red-600/40 cursor-pointer"
           >
             <MdOutlineFileDownload className="text-xl sm:text-2xl" />
             Download Resume
-          </motion.a>
+          </motion.button>
         </div>
 
         {/* RIGHT IMAGE */}
