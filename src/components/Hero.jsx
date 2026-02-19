@@ -8,10 +8,10 @@ const Hero = () => {
   const nameText = "Mahidharan";
 
   return (
-    <section className="relative w-full flex items-center overflow-hidden pt-[90px] lg:pt-[110px]">
+    <section className="relative w-full flex items-center overflow-hidden pt-[80px] pb-12 min-h-[85vh]">
       {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0b0f1a] via-[#050816] to-black" />
-      <div className="absolute top-1/2 left-1/2 w-[520px] h-[520px] bg-violet-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black via-[#0a0a0a] to-[#1a0000]" />
+      <div className="absolute top-1/2 left-1/2 w-[520px] h-[520px] bg-red-600/15 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
 
       <div
         className={`max-w-7xl mx-auto w-full ${styles.paddingX}
@@ -70,7 +70,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25 }}
-            className="mt-2 text-[22px] sm:text-[26px] text-[#915EFF] font-semibold"
+            className="mt-2 text-[22px] sm:text-[26px] text-[#DC2626] font-semibold"
           >
             Software Developer
           </motion.h2>
@@ -94,9 +94,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45 }}
             className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-xl
-              bg-[#915EFF] text-white font-semibold
-              hover:bg-[#7c4dff] transition
-              shadow-lg shadow-violet-500/30"
+              bg-gradient-to-r from-[#DC2626] to-[#991B1B] text-white font-semibold
+              hover:from-[#EF4444] hover:to-[#DC2626] transition
+              shadow-lg shadow-red-600/40"
           >
             <MdOutlineFileDownload className="text-2xl" />
             Download Resume
@@ -114,7 +114,7 @@ const Hero = () => {
             src={hero3d}
             alt="Developer Illustration"
             className="w-[240px] sm:w-[300px] lg:w-[380px] xl:w-[420px]
-              drop-shadow-[0_35px_70px_rgba(145,94,255,0.25)]"
+              drop-shadow-[0_35px_70px_rgba(220,38,38,0.35)]"
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />

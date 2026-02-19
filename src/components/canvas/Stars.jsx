@@ -8,7 +8,7 @@ const Stars = () => {
 
   // More stars, better distribution
   const [positions] = useState(() =>
-    random.inSphere(new Float32Array(7000), { radius: 1.5 })
+    random.inSphere(new Float32Array(7000), { radius: 1.5 }),
   );
 
   useFrame((_, delta) => {
@@ -27,8 +27,8 @@ const Stars = () => {
           size={0.003}
           sizeAttenuation
           depthWrite={false}
-          color="#8b5cf6" // violet
-          opacity={0.8}
+          color="#dc2626" // red
+          opacity={0.7}
         />
       </Points>
     </group>

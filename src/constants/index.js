@@ -54,7 +54,7 @@ const experiences = [
     company_name: "Karpagam Academy of Higher Education",
     degree: "Bachelor of Computer Applications",
     cgpa: "CGPA: 7.70 / 10",
-    iconBg: "#1d1836",
+    iconBg: "#7F1D1D",
     date: "2023 – 2026",
     points: [
       "Pursuing Bachelor of Computer Applications with strong interest in full-stack development.",
@@ -66,7 +66,7 @@ const experiences = [
   {
     title: "MERN Stack Developer",
     company_name: "Personal Projects",
-    iconBg: "#1d1836",
+    iconBg: "#991B1B",
     date: "2024 – Present",
     points: [
       "Designed and developed full-stack MERN applications from scratch.",

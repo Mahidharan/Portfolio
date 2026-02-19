@@ -35,7 +35,7 @@ const Contact = () => {
           to_email: "mahidharan5612@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
       )
       .then(
         () => {
@@ -48,7 +48,7 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-        }
+        },
       );
   };
 
@@ -56,10 +56,10 @@ const Contact = () => {
     <div className="cursor-disable xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        className="flex-[0.75] bg-gradient-to-br from-[#1a0a0a] to-[#0a0a0a] border border-red-900/20 p-8 rounded-2xl"
       >
         <h1 className=" uppercase tracking-widest text-3xl">
-          Get in <span className="uppercase text-purple-700"> touch</span>
+          Get in <span className="uppercase text-[#DC2626]"> touch</span>
         </h1>
 
         {success && (
@@ -123,8 +123,8 @@ const Contact = () => {
           <button
             type="submit"
             className="
-              bg-[#915EFF] py-3 px-8 rounded-xl w-fit text-white font-bold
-              hover:bg-[#7c4dff] transition shadow-lg shadow-violet-500/30
+              bg-gradient-to-r from-[#DC2626] to-[#991B1B] py-3 px-8 rounded-xl w-fit text-white font-bold
+              hover:from-[#EF4444] hover:to-[#DC2626] transition shadow-lg shadow-red-600/40
             "
           >
             {loading ? "Sending..." : "Send Message"}
@@ -136,7 +136,7 @@ const Contact = () => {
             href="https://github.com/Mahidharan"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-11 h-11 rounded-full bg-black/50 flex items-center justify-center hover:bg-violet-600/70 transition"
+            className="w-11 h-11 rounded-full bg-black/50 border border-red-900/30 flex items-center justify-center hover:bg-red-600/70 hover:border-red-600 transition"
           >
             <FaGithub className="text-white text-xl" />
           </a>
@@ -145,14 +145,14 @@ const Contact = () => {
             href="https://www.linkedin.com/in/mahidharan"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-11 h-11 rounded-full bg-black/50 flex items-center justify-center hover:bg-violet-600/70 transition"
+            className="w-11 h-11 rounded-full bg-black/50 border border-red-900/30 flex items-center justify-center hover:bg-red-600/70 hover:border-red-600 transition"
           >
             <FaLinkedinIn className="text-white text-xl" />
           </a>
 
           <a
             href="mailto:mahidharan5612@gmail.com"
-            className="w-11 h-11 rounded-full bg-black/50 flex items-center justify-center hover:bg-violet-600/70 transition"
+            className="w-11 h-11 rounded-full bg-black/50 border border-red-900/30 flex items-center justify-center hover:bg-red-600/70 hover:border-red-600 transition"
           >
             <MdEmail className="text-white text-xl" />
           </a>

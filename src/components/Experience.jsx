@@ -16,12 +16,20 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
+        background:
+          "linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(10, 10, 10, 0.95) 100%)",
         color: "#fff",
+        border: "1px solid rgba(220, 38, 38, 0.3)",
+        boxShadow:
+          "0 10px 40px rgba(220, 38, 38, 0.15), 0 0 20px rgba(220, 38, 38, 0.1)",
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: "7px solid rgba(220, 38, 38, 0.4)" }}
       date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
+      iconStyle={{
+        background: experience.iconBg,
+        boxShadow:
+          "0 0 20px rgba(220, 38, 38, 0.5), 0 0 40px rgba(220, 38, 38, 0.3)",
+      }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
           <img
@@ -33,17 +41,19 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
+        <h3 className="text-white text-[24px] font-bold bg-gradient-to-r from-white to-red-200 bg-clip-text">
+          {experience.title}
+        </h3>
         <p className="text-secondary text-[16px] font-semibold m-0">
           {experience.company_name}
         </p>
 
         {experience.degree && (
-          <p className="text-white-100 text-[14px] mt-1">{experience.degree}</p>
+          <p className="text-gray-300 text-[14px] mt-1">{experience.degree}</p>
         )}
 
         {experience.cgpa && (
-          <p className="text-[#915EFF] text-[14px] mt-1 font-medium">
+          <p className="text-[#EF4444] text-[15px] mt-1 font-semibold bg-red-950/30 inline-block px-3 py-1 rounded-full border border-red-900/30">
             {experience.cgpa}
           </p>
         )}
@@ -78,11 +88,11 @@ const Experience = () => {
           What I have done so far
         </h2>
 
-        <div className="mt-3 mx-auto w-20 h-[3px] rounded-full bg-[#915EFF]" />
+        <div className="mt-3 mx-auto w-20 h-[3px] rounded-full bg-gradient-to-r from-[#DC2626] to-[#7F1D1D]" />
       </motion.div>
 
-      <div className="mt-16 flex flex-col">
-        <VerticalTimeline>
+      <div className="mt-10 flex flex-col">
+        <VerticalTimeline lineColor="rgba(220, 38, 38, 0.3)">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}

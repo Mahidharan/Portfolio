@@ -29,7 +29,7 @@ const Navbar = () => {
         transition-all duration-300
         ${
           scrolled
-            ? "bg-gradient-to-r from-[#0b0f1f]/80 via-[#0e1230]/80 to-[#0b0f1f]/80 backdrop-blur-md border-b border-white/10"
+            ? "bg-gradient-to-r from-black/80 via-[#1a0000]/80 to-black/80 backdrop-blur-md border-b border-red-900/20"
             : "bg-transparent"
         }
       `}
@@ -70,7 +70,7 @@ const Navbar = () => {
               <span
                 className={`
                   absolute -bottom-1 left-0 h-[2px]
-                  bg-gradient-to-r from-[#915EFF] to-[#c084fc]
+                  bg-gradient-to-r from-[#DC2626] to-[#EF4444]
                   transition-all duration-300
                   ${active === nav.title ? "w-full" : "w-0 group-hover:w-full"}
                 `}
@@ -94,9 +94,9 @@ const Navbar = () => {
               flex-col gap-4
               p-6 min-w-[180px]
               rounded-xl
-              bg-gradient-to-br from-[#0b0f1f]/90 via-[#0e1230]/90 to-[#0b0f1f]/90
+              bg-gradient-to-br from-black/90 via-[#1a0000]/90 to-black/90
               backdrop-blur-lg
-              border border-white/10
+              border border-red-900/20
               shadow-2xl
             `}
           >

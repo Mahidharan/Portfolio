@@ -59,10 +59,11 @@ const SkillCard = ({ tech }) => {
           flex flex-col items-center justify-center
           rounded-xl
           bg-white/5 backdrop-blur-md
-          border border-white/10
+          border border-red-900/20
           shadow-[0_10px_30px_rgba(0,0,0,0.35)]
-          hover:shadow-[0_20px_60px_rgba(145,94,255,0.4)]
-          transition-shadow duration-300
+          hover:shadow-[0_20px_60px_rgba(220,38,38,0.5)]
+          hover:border-red-700/40
+          transition-all duration-300
         "
       >
         <img
@@ -97,7 +98,7 @@ const Tech = () => {
           Technical Skills
         </h2>
 
-        <div className="mt-3 mx-auto w-24 h-[3px] rounded-full bg-[#915EFF]" />
+        <div className="mt-3 mx-auto w-24 h-[3px] rounded-full bg-gradient-to-r from-[#DC2626] to-[#7F1D1D]" />
 
         <p className="mt-4 text-secondary text-[16px] max-w-2xl mx-auto leading-[28px]">
           Technologies and tools I use to design, build, and deploy modern
